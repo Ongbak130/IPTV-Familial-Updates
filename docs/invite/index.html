@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Invitation — IPTV Familial</title>
+  <style>
+    :root{color-scheme:dark;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#142844 0%,#090f1e 75%);color:#f4f8ff;display:flex;align-items:center;justify-content:center;padding:20px}
+    main{width:100%;max-width:540px;background:#152035;border:1px solid #304461;border-radius:24px;padding:clamp(24px,6vw,40px);box-shadow:0 16px 60px #0007}
+    .mark{display:inline-grid;place-items:center;border-radius:18px;width:60px;height:60px;font-size:29px;background:linear-gradient(140deg,#26c9ba,#426af9);margin-bottom:18px}
+    h1{font-size:clamp(25px,6vw,32px);letter-spacing:-.035em;margin:0 0 12px}
+    p{color:#becce0;line-height:1.6;margin:10px 0 22px}
+    .small{font-size:13px;color:#a6b5ca;margin:18px 0 0}
+    a.action,button{width:100%;display:flex;justify-content:center;align-items:center;text-align:center;padding:15px 20px;border-radius:14px;font:600 16px system-ui;cursor:pointer;text-decoration:none;min-height:52px}
+    .primary{background:#25b9ba;color:#03151f;border:0}
+    .secondary{background:#233754;color:#edf4fe;border:1px solid #436284;margin-top:12px}
+    .link{color:#b1cbff}
+    .hidden{display:none}
+    textarea{background:#091321;color:#d6e5f8;border:1px solid #45617f;border-radius:12px;padding:13px;width:100%;font:12px ui-monospace,monospace;resize:none;min-height:92px;overflow-wrap:anywhere;word-break:break-all}
+    .note{border-top:1px solid #34465f;margin-top:24px;padding-top:16px}
+    a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid #93effa;outline-offset:3px}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark" aria-hidden="true">▶</div>
+    <h1>IPTV Familial</h1>
+    <p id="state" role="status">Vérification de l'invitation…</p>
+    <section id="valid" class="hidden">
+      <a class="action primary" id="open" href="#">Ouvrir IPTV Familial</a>
+      <button class="secondary" id="copy" type="button">Copier l'invitation</button>
+      <div class="note">
+        <p class="small">Si l'application ne s'ouvre pas automatiquement, copie l'invitation et colle-la dans <strong>Domicile intelligent → Rejoindre un Hub avec une invitation</strong>.</p>
+        <textarea id="invitation" readonly aria-label="Lien d'invitation à copier"></textarea>
+        <p class="small">Valable 10 minutes après sa création et utilisable une seule fois. Ne partage pas le lien avec d'autres personnes.</p>
+      </div>
+    </section>
+    <section id="invalid" class="hidden">
+      <p>Demande à la personne qui t'a invité de générer un nouveau lien depuis IPTV Familial.</p>
+    </section>
+    <p class="small">L'application n'est pas installée? <a class="link" href="https://github.com/Ongbak130/IPTV-Familial-Updates/releases/download/v1.4.2-beta77/IPTV-Familial-BETA-77.apk" rel="noreferrer">Télécharger IPTV Familial pour Android</a>.</p>
+  </main>
+  <script type="module" src="./page.mjs"></script>
+</body>
+</html>
